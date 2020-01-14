@@ -1,0 +1,14 @@
+{
+  "appPort": 8888,
+
+  "extensions": [
+    "ms-vsts.team",
+    "eamodio.gitlens",
+    "ms-python.python",
+    "ms-vscode.powershell",
+    "quicktype.quicktype",
+    "mechatroner.rainbow-csv"
+  ],
+
+  image: "jupyter/pyspark-notebook"
+}
