@@ -20,7 +20,6 @@ ARG USER_GID=$USER_UID
 # include your requirements in the image itself. It is suggested that you only do this if your
 # requirements rarely (if ever) change.
 # COPY requirements.txt /tmp/pip-tmp/
-RUN pip install --no-cache-dir -r requirements.txt
 
 # Configure apt and install packages
 RUN apt-get update \
