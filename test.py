@@ -2,14 +2,12 @@
 
 import requests
 
+import pyspark
 
+from pyspark.sql import SparkSession
 
-# import pyspark
+spark = SparkSession.builder.getOrCreate()
 
-# from pyspark.sql import SparkSession
+df = spark.sql("select 'spark' as hello ")
 
-# spark = SparkSession.builder.getOrCreate()
-
-# df = spark.sql("select 'spark' as hello ")
-
-# df.show()
+df.show()
