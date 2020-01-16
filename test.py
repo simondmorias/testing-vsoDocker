@@ -1,9 +1,15 @@
-import pyspark
+ # /opt/python/latest/bin/pip3 list
 
-from pyspark.sql import SparkSession
+import requests
 
-spark = SparkSession.builder.getOrCreate()
 
-df = spark.sql("select 'spark' as hello ")
 
-df.show()
+# import pyspark
+
+# from pyspark.sql import SparkSession
+
+# spark = SparkSession.builder.getOrCreate()
+
+# df = spark.sql("select 'spark' as hello ")
+
+# df.show()
