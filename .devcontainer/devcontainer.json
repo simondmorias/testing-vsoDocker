@@ -1,5 +1,6 @@
 {
-	"context": ".",
+	"name": "Python 3",
+	"context": "..",
 	"dockerFile": "Dockerfile",
 
 	// Use 'settings' to set *default* container specific settings.json values on container create. 
@@ -14,15 +15,13 @@
 
 	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
 	// your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
-	// "appPort": [],
+	// "appPort": [ 9000 ],
 
-	// Uncomment the next line to run commands after the container is created.
-	"postCreateCommand": "pip install -r ~/workspace/requirements.txt --user",
+	// Install flask and any other dependencies
+	"postCreateCommand": "sudo pip install -r requirements.txt",
 
-	// Uncomment the next line to have VS Code connect as an existing non-root user in the container. 
-	// On Linux, by default, the container user's UID/GID will be updated to match your local user. See
-	// https://aka.ms/vscode-remote/containers/non-root for details on adding a non-root user if none exist.
-	// "remoteUser": "vscode",
+	// Comment out next line to run as root
+	"remoteUser": "vscode",
 
 	// Add the IDs of extensions you want installed when the container is created in the array below.
 	"extensions": [
