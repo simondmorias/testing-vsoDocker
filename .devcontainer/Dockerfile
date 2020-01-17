@@ -4,6 +4,7 @@
 #-------------------------------------------------------------------------------------------------------------
 
 FROM python:3.7.3
+COPY --from=openjdk:slim
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
@@ -20,14 +21,6 @@ ARG USER_GID=$USER_UID
 # include your requirements in the image itself. It is suggested that you only do this if your
 # requirements rarely (if ever) change.
 # COPY requirements.txt /tmp/pip-tmp/
-
-RUN apt-get update
-RUN apt-get -y install software-properties-common
-RUN add-apt-repository -y ppa:webupd8team/java
-RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
-RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
-RUN apt-get update
-RUN apt-get -y install oracle-java8-installer
 
 # Configure apt and install packages
 RUN apt-get update \
