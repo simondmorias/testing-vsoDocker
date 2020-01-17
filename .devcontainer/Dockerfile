@@ -9,9 +9,6 @@ FROM python:3.7.3
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && \
-  apt-get upgrade -y && \
-  apt-get install -q -y openjdk-8-jdk
 
 # This Dockerfile adds a non-root user with sudo access. Use the "remoteUser"
 # property in devcontainer.json to use it. On Linux, the container user's GID/UIDs
