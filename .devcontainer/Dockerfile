@@ -21,10 +21,13 @@ ARG USER_GID=$USER_UID
 # requirements rarely (if ever) change.
 # COPY requirements.txt /tmp/pip-tmp/
 
-#RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
-#RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" > /etc/apt/sources.list.d/webupd8team-java-trusty.list
-#RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
-#RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes --no-install-recommends oracle-java8-installer && apt-get clean all
+RUN apt-get update
+RUN apt-get -y install software-properties-common
+RUN add-apt-repository -y ppa:webupd8team/java
+RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
+RUN apt-get update
+RUN apt-get -y install oracle-java8-installer
 
 # Configure apt and install packages
 RUN apt-get update \
