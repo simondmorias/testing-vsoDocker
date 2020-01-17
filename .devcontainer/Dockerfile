@@ -4,7 +4,7 @@
 #-------------------------------------------------------------------------------------------------------------
 
 FROM python:3.7.3
-
+COPY --from=openjdk:slim
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
