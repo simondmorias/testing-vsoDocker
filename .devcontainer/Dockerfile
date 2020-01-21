@@ -16,11 +16,11 @@ ARG USER_GID=$USER_UID
 # Configure apt
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt update
-RUN apt install software-properties-common
+RUN apt -y update
+RUN apt -y install software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt update
-RUN apt install python3.7
+RUN apt -y update
+RUN apt -y install python3.7
 
 RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
