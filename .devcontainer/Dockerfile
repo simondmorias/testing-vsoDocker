@@ -4,7 +4,6 @@
 #-------------------------------------------------------------------------------------------------------------
 
 FROM mcr.microsoft.com/java/jdk:8u232-zulu-ubuntu
-# COPY --from=python:3.7.3
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
