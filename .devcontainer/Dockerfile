@@ -43,6 +43,7 @@ COPY environment.yml .
 RUN conda env create -f environment.yml
 
 # Activate the environment, and make sure it's activated:
+RUN source ~/anaconda3/etc/profile.d/conda.sh
 RUN conda activate pyspark
 RUN echo "Make sure pyspark is installed:"
 RUN python -c "import pyspark"
