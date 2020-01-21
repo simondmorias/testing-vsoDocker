@@ -6,10 +6,10 @@
 	// You can edit these settings after create using File > Preferences > Settings > Remote.
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash",
-		"python.pythonPath": "/usr/local/bin/python",
+		"python.pythonPath": "/opt/conda/bin/python",
 		"python.linting.enabled": true,
 		"python.linting.pylintEnabled": true,
-		"python.linting.pylintPath": "/usr/local/bin/pylint"
+		"python.linting.pylintPath": "/usr/conda/bin/pylint"
 	},
 
 	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
