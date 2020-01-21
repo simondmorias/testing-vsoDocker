@@ -66,7 +66,7 @@ ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false \
 # VSCode DevContainers
 RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
-    && && apt install -y /tmp/powershell.deb \
+    && apt install -y /tmp/powershell.deb \
     #
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
     && groupadd --gid $USER_GID $USERNAME \
