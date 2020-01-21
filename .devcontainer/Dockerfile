@@ -42,9 +42,11 @@ CMD [ "/bin/bash" ]
 COPY environment.yml .
 RUN conda env create -f environment.yml
 
+# Initialize conda in bash config fiiles:
+RUN conda init bash
+
 # Activate the environment, and make sure it's activated:
-RUN source ~/anaconda3/etc/profile.d/conda.sh
-RUN conda activate pyspark
+RUN echo "conda activate myenv" > ~/.bashrc
 RUN echo "Make sure pyspark is installed:"
 RUN python -c "import pyspark"
 
