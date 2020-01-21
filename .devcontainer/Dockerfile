@@ -48,7 +48,7 @@ RUN source activate bash
 # Activate the environment, and make sure it's activated:
 # RUN echo "conda activate myenv" > ~/.bashrc
 RUN echo "Make sure pyspark is installed:"
-RUN python -c "import pyspark"
+RUN python -c "import requests"
 
 RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
