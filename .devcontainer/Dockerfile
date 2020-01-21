@@ -39,7 +39,7 @@ RUN chmod +x /usr/bin/tini
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
 CMD [ "/bin/bash" ]
 
-COPY environment.yml .
+COPY .devcontainer/environment.yml .
 RUN conda env create -f environment.yml
 
 # Initialize conda in bash config fiiles:
